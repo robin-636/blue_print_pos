@@ -52,7 +52,7 @@ class BluePrintPosPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                 val windowMetrics = activity.windowManager.currentWindowMetrics
                 val insets =
                     windowMetrics.windowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars())
-                dWidth = windowMetrics.bounds.width() - insets.left - insets.right
+                dWidth = 450
                 dHeight = windowMetrics.bounds.height() - insets.bottom - insets.top
             } else {
                 dWidth = this.activity.window.windowManager.defaultDisplay.width
