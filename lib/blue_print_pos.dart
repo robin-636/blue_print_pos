@@ -15,7 +15,7 @@ class BluePrintPos {
   /// value and styling inside model [ReceiptSectionText].
   /// [feedCount] to create more space after printing process done
   /// [useCut] to cut printing process
-  Future<List<int>> printReceiptText(
+  Future<Uint8List> printReceiptText(
     ReceiptSectionText receiptSectionText, {
     int feedCount = 0,
     bool useCut = false,
@@ -27,14 +27,8 @@ class BluePrintPos {
       content: receiptSectionText.content,
       duration: duration,
     );
-    final List<int> byteBuffer = await _getBytes(
-      bytes,
-      paperSize: paperSize,
-      feedCount: feedCount,
-      useCut: useCut,
-      useRaster: useRaster,
-    );
-    return byteBuffer;
+
+    return bytes;
   }
 
   /// This method only for print image with parameter [bytes] in List<int>
