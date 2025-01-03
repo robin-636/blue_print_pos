@@ -25,7 +25,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace = "com.ayeee.blue_print_pos"
     compileSdkVersion 32
 
     sourceSets {
