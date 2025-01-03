@@ -52,7 +52,7 @@ class BluePrintPosPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                 val windowMetrics = activity.windowManager.currentWindowMetrics
                 val insets =
                     windowMetrics.windowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars())
-                dWidth = 720
+                dWidth =  576
                 dHeight = windowMetrics.bounds.height() - insets.bottom - insets.top
             } else {
                 dWidth = this.activity.window.windowManager.defaultDisplay.width
@@ -62,7 +62,7 @@ class BluePrintPosPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             Logger.log("\ndheight : $dHeight")
             webView.layout(0, 0, dWidth, dHeight)
             webView.loadDataWithBaseURL(null, content, "text/HTML", "UTF-8", null)
-            webView.setInitialScale(1)
+            webView.setInitialScale(2)
             webView.settings.javaScriptEnabled = true
             webView.settings.useWideViewPort = true
             webView.settings.javaScriptCanOpenWindowsAutomatically = true
@@ -101,7 +101,7 @@ class BluePrintPosPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                                 }
                             }
                         }
-                    }, (duration ?: 0.0).toLong())
+                    }, (150).toLong())
                 }
             }
         } else {
